@@ -1,0 +1,9 @@
+{
+	"type": "object",
+	"properties": {
+		"myEnum": {
+			"type": "string",
+			"enum": ["Central Air Conditioner", "Heat Pumps", "Ductless Mini-Splits", "Evaporative Air Conditioners", "Radiant"]
+		}
+	}
+}

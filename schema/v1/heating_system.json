@@ -1,0 +1,9 @@
+{
+	"type": "object",
+	"properties": {
+		"myEnum": {
+			"type": "string",
+			"enum": ["Furnace", "Boiler", "HeatPump", "Hybrid", "Ductless Mini-Splits", "Radiant", "Baseboard"]
+		}
+	}
+}

@@ -1,0 +1,129 @@
+{
+	"type": "object",
+	"title": "ListingSpecification",
+	"description": "All the attributes of ListingSpecification are mandatory if the property type is not lot or land.",
+	"properties": {
+		"year_built": {
+			"type": "integer",
+			"description": "When was this listing built? Year can be past, present or future."
+		},
+		"heating": {
+			"type": "array",
+			"items": {
+				"$ref": "heating_system.json"
+			},
+			"minLength":1,
+      		"maxLength":10,
+			"description": "Furnace, Boiler, Heat Pump, Hybrid, Ductless Mini-Splits, Radiant, Baseboard."
+		},
+		"cooling": {
+			"type": "array",
+			"items": {
+				"$ref": "cooling_system.json"
+			},
+			"minLength":1,
+      		"maxLength":10,
+			"description": "Central Air Conditioner, Heat Pumps, Ductless Mini-Split Systems, Evaporative Air Conditioners, Radiant."
+		},
+		"flooring": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minLength":1,
+      		"maxLength":10,
+			"description": "Type of flooring for the listing."
+		},
+		"appliances": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minLength":1,
+      		"maxLength":50,
+			"description": "Appliances included in the listing."
+		},
+		"square_foot": {
+			"type": "string",
+			"description": "Total square footage of the listing"
+		},
+		"number_of_bedrooms": {
+			"type": "integer",
+			"description": "Total number of bedrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_bathrooms": {
+			"type": "integer",
+			"description": "Total number of bathrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_full_bathrooms": {
+			"type": "integer",
+			"description": "Total number of full bathrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_3_4_bathrooms": {
+			"type": "integer",
+			"description": "Total number of 3/4 bathrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_1_4_bathrooms": {
+			"type": "integer",
+			"description": "Total number of 1/4 bathrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_1_2_bathrooms": {
+			"type": "integer",
+			"description": "Total number of 1/2 bathrooms of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_parking_spaces": {
+			"type": "integer",
+			"description": "Total number of parking spaces of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_garages": {
+			"type": "integer",
+			"description": "Total number of garages of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_stories": {
+			"type": "integer",
+			"description": "Total number of stories of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		},
+		"number_of_balconies": {
+			"type": "integer",
+			"description": "Total number of balconies of the listing.",
+			"minimum": 0,
+      		"maximum": 10000
+		}
+	},
+	"required": [
+		"year_built",
+		"heating",
+		"cooling",
+		"flooring",
+		"appliances",
+		"sqft",
+		"number_of_bedrooms",
+		"number_of_bathrooms",
+		"number_of_full_bathrooms",
+		"number_of_3_4_bathrooms",
+		"number_of_1_4_bathrooms",
+		"number_of_1_2_bathrooms",
+		"number_of_parking_spaces",
+		"number_of_garages",
+		"number_of_stories",
+		"number_of_balconies"
+	]
+}

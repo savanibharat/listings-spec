@@ -1,0 +1,91 @@
+{
+	"type": "object",
+	"title": "The Listing is a property that is available for advertisement for rental for .",
+	"description": "",
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "Unique id of the Listing."
+		},
+		"name": {
+			"type": "string",
+			"description": "Need not be unique.",
+			"minLength":3,
+			"maxLength":300
+		},
+		"description": {
+			"type": "string",
+			"description": "Description of the listing.",
+			"minLength":10,
+			"maxLength":3000
+		},
+		"display_message": {
+			"type": "string",
+			"description": "Display message of the listing."
+		},
+		"latitude": {
+			"type": "string",
+			"description": "latitude of the listing."
+		},
+		"longitude": {
+			"type": "string",
+			"description": "longitude of the listing."
+		},
+		"image_urls": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "string"
+			},
+			"description": "Image urls of the listing."
+		},
+		"property_type": {
+			"type": "string",
+			"enum": [
+				"HOUSE",
+				"CONDO",
+				"TOWNHOUSE",
+				"MULTI_FAMILY",
+				"LAND",
+				"LOT",
+				"MANUFACTURED",
+				"APARTMENT"
+			],
+			"description": "Property type of the listing."
+		},
+		"address": {
+			"description": "Address of the listing.",
+			"$ref": "address.json"
+		},
+		"listing_specification": {
+			"$ref": "listing_specification.json",
+			"description": "Listing Specification of the listing."
+		},
+		"listings_params": {
+			"type": "array",
+			"items": {
+				"$ref": "params.json"
+			},
+			"maxLength":10,
+			"description": "Generic key value parameters."
+		},
+		"create_time": {
+			"description": "The timestamp when this listing was created.",
+			"type": "string",
+			"readOnly": true
+		},
+		"update_time": {
+			"description": "The timestamp when this listing was updated.",
+			"type": "string",
+			"readOnly": true
+		}
+	},
+	"required": [
+		"name",
+		"description",
+		"latitude",
+		"longitude",
+		"property_type",
+		"address"
+	]
+}

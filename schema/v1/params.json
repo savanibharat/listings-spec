@@ -1,0 +1,18 @@
+{
+	"title": "generic listing parameters",
+	"description": "Generic key value pair object.",
+	"properties": {
+		"key": {
+			"type": "string",
+			"description": "Any generic listing specific key. If this is empty or null it is ignored."
+		},
+		"value": {
+			"type": "string",
+			"description": "Any generic listing specific value. If this is empty or null it is ignored."
+		}
+	},
+	"required": [
+		"key",
+		"value"
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"type": "object",
+	"title": "Address",
+	"description": "https://documentation.b2c.commercecloud.salesforce.com/DOC3/index.jsp?topic=%2Fcom.demandware.dochelp%2FOrderManagement%2FInternationalization%2FGlobalAddressSupport.html",
+	"properties": {
+		"address_line_1": {
+			"type": "string",
+			"description": "Number of the street and street name.",
+			"minLength": 2,
+			"maxLength": 300
+		},
+		"address_line_2": {
+			"type": "string",
+			"description": "Apartment number or equivalent.",
+			"minLength": 2,
+			"maxLength": 300
+		},
+		"city": {
+			"type": "string",
+			"description": "City of the country. Example San Jose and Houston.",
+			"minLength": 2,
+			"maxLength": 300
+		},
+		"state": {
+			"type": "string",
+			"description": "State of the country. Example California and Florida.",
+			"minLength": 2,
+			"maxLength": 300
+		},
+		"postal_code": {
+			"type": "string",
+			"description": "Postal code of the city.",
+			"minLength": 2,
+			"maxLength": 300
+		},
+		"country_code": {
+			"type": "string",
+			"description": "ISO 2 code of country. Example US and IN. Alpha 2 codes https://www.nationsonline.org/oneworld/country_code_list.htm",
+			"minLength": 2,
+			"maxLength": 2
+		}
+	},
+	"required": [
+		"address_line_1",
+		"address_line_2",
+		"city",
+		"state",
+		"postal_code",
+		"country_code"
+	]
+}

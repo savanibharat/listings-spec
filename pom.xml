@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.justamonad.api.platform</groupId>
+	<artifactId>listings-spec</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	<name>listings-spec</name>
+	<description>Listings-spec for tenants</description>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jackson.version>2.9.9</jackson.version>
+	</properties>
+
+	<developers>
+		<developer>
+			<id>DEVELOPER</id>
+			<name>Bharat Savani</name>
+			<organizationUrl>https://www.justamonad.com</organizationUrl>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jsonschema2pojo</groupId>
+				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
+				<version>0.4.22</version>
+				<!-- https://github.com/joelittlejohn/jsonschema2pojo/blob/master/jsonschema2pojo-gradle-plugin/src/main/groovy/org/jsonschema2pojo/gradle/JsonSchemaExtension.groovy -->
+				<executions>
+					<execution>
+						<configuration>
+							<sourcePaths>
+								<sourcePath>${basedir}/schema/v1</sourcePath>
+							</sourcePaths>
+							<targetPackage>com.justamonad.api.platform</targetPackage>
+							<includeJsr303Annotations>true</includeJsr303Annotations>
+							<propertyWordDelimiters>_</propertyWordDelimiters>
+							<generateBuilders>true</generateBuilders>
+							<removeOldOutput>false</removeOldOutput>
+							<includeAdditionalProperties>false</includeAdditionalProperties>
+						</configuration>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
